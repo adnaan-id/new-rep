@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>mobile.twitter</title>
+    <link rel="stylesheet" href="./Untitled-1.css">
+    <style>
+        @media only screen and (max-width: 500px) {
+            * {
+                box-sizing: border-box;
+            }
+
+            @font-face {
+                font-family: bebas;
+                src: url('../fonts/Bebas_Neue/BebasNeue-Regular.ttf');
+            }
+
+            @font-face {
+                font-family: marquee;
+                src: url(../HTML+CSS/outfitextract/Outfit-VariableFont_wght.ttf);
+            }
+
+            header {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                height: 18vh;
+            }
+
+            img.logo {
+                width: 30%;
+                display: inline;
+            }
+
+            form {
+                visibility: hidden;
+            }
+
+            div.header {
+                font-family: 'Bodoni MT';
+                overflow: visible;
+                position: absolute;
+                display: inline;
+                margin: 4% 0 0 30%;
+                padding: 0;
+                width: 65%;
+                font-size: 30px;
+                float: left;
+            }
+
+            nav.parent-nav {
+                display: block;
+                width: 100%;
+                height: 5vh;
+                visibility: visible;
+                background-color: rgb(244, 247, 250);
+            }
+
+            nav.main-nav {
+                position: fixed;
+                z-index: 10;
+                width: inherit;
+                display: flex;
+                flex-direction: column;
+                visibility: hidden;
+                background-color: white;
+            }
+
+            nav.parent-nav:hover nav.main-nav {
+                visibility: visible;
+            }
+
+            .click {
+                visibility: visible;
+                font-size: 1.6rem;
+                font-family: bebas;
+                letter-spacing: 1pt;
+            }
+
+            a.prod,
+            a.join,
+            a.sign,
+            a.log {
+                text-decoration: none;
+                width: inherit;
+                font-size: 1.6rem;
+            }
+
+            a.prod::after,
+            a.join::after,
+            a.sign::after,
+            a.log::after {
+                content: '';
+                display: block;
+                width: 0;
+                border-bottom: 4px solid;
+                padding-bottom: 2px;
+                transition: width 300ms;
+            }
+
+            a.prod:hover::after,
+            a.join:hover::after,
+            a.sign:hover::after,
+            a.log:hover::after {
+                width: 100%;
+            }
+
+            article {
+                display: block;
+            }
+
+            marquee {
+                font-family: marquee;
+            }
+
+            div.maindiv {
+                background-color: turquoise;
+                display: flex;
+                flex-direction: column-reverse;
+                height: auto;
+                width: 100%;
+            }
+
+            .leftdiv {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                width: 100%;
+                margin: auto;
+            }
+
+            .leftson1,
+            .leftson2 {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                margin-bottom: 2vh;
+            }
+
+            .gson1,
+            .gson2,
+            .gson3,
+            .gson4 {
+                display: flex;
+                height: auto;
+                width: 100%;
+                margin-bottom: 2vh;
+            }
+
+            img.clothes,
+            img.shoes {
+                width: 90%;
+                margin: 0 1rem;
+                opacity: 1;
+                transition: opacity 300ms ease;
+            }
+
+            p.clothesp {
+                font-family: bebas;
+                position: relative;
+                right: 60vw;
+                opacity: 0;
+                font-family: bebas;
+                width: 70%;
+                transition: opacity 300ms ease;
+            }
+
+            img.clothes:hover {
+                opacity: 0;
+            }
+
+            img.clothes:hover+p.clothesp {
+                opacity: 1;
+            }
+
+            img.shoes:hover {
+                opacity: 0;
+            }
+
+            p.shoesp {
+                font-family: bebas;
+                opacity: 0;
+                width: 50%;
+                position: relative;
+                right: 60vw;
+                transition: opacity 300ms ease;
+            }
+
+            img.shoes:hover+.shoesp {
+                opacity: 1;
+            }
+
+            img.bags {
+                opacity: 1;
+                width: 90%;
+                height: auto;
+                margin: 0 1rem;
+                transition: opacity 300ms ease;
+            }
+
+            .bagsp {
+                font-family: bebas;
+                opacity: 0;
+                width: 70%;
+                position: relative;
+                right: 60vw;
+                transition: opacity 300ms ease;
+            }
+
+            img.bags:hover {
+                opacity: 0;
+            }
+
+            img.bags:hover+.bagsp {
+                opacity: 1;
+            }
+
+            .unsplash {
+                color: white;
+            }
+
+            img.glasses {
+                width: 90%;
+                margin: 0 1rem;
+                opacity: 1;
+                transition: opacity 300ms ease;
+            }
+
+            .glassp {
+                position: relative;
+                right: 60vw;
+                opacity: 0;
+                font-family: bebas;
+            }
+
+            img.glasses:hover {
+                opacity: 0;
+            }
+
+            img.glasses:hover+.glassp {
+                opacity: 1;
+            }
+
+            .rightdiv {
+                display: block;
+                height: auto;
+                width: 100%;
+                margin: auto;
+            }
+
+            .rightson1,
+            .rightson2,
+            .rightson3,
+            .rightson4,
+            .rightson5 {
+                margin: 0 1rem;
+            }
+
+            .rightson2,
+            .rightson3,
+            .rightson4,
+            .rightson5 {
+                font-family: marquee;
+                font-size: small;
+                margin: 0 1rem 2vh 1rem;
+            }
+
+            .rightson1 {
+                font-family: bebas;
+                font-size: x-large;
+                margin-bottom: 2vh;
+            }
+        }
+    </style>
+    <script>
+        alert("this website is purely HTML and CSS. you'll learn more if you hover on the images on display")
+    </script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+
+
+
+
+    <!-- header  -->
+    <header>
+        <img class="logo" src="../web images/Looka2.png" alt="brand logo">
+        <form action="#">
+            <input type="text" name="search" placeholder="search">
+        </form>
+        <div class="header"> alexandre dubois
+            <!--possibly, add this (but youre gonna have to go 
+                through the pain of styling that div.header once again!!!);
+                <sub> where fashion meets style</sub>-->
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- navigation -->
+    <nav class="parent-nav">
+        <span class="click">
+            Navigate here!
+        </span>
+        <nav class="main-nav">
+            <a href="#" class="prod" style="color: black;">
+                products
+            </a>
+            <a href="#" class="join" style="color: black;">
+                join us
+            </a>
+            <a href="#" class="sign" style="color: black;">
+                sign up
+            </a>
+            <a href="#" class="log" style="color: black;">
+                log in
+            </a>
+        </nav>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- main -->
+    <article>
+        <marquee behavior="alternate" direction="right">
+            welcome! work is still in progress.
+            Do check in from time to time :D
+        </marquee>
+        <div class="maindiv">
+            <div class="leftdiv">
+                <div class="leftson1">
+                    <div class="gson1">
+                        <img src="../web images/heather-ford-5gkYsrH_ebY-unsplash.jpg" alt="clothes" class="clothes">
+                        <p class="clothesp">
+                            this is an example
+                            of a template for a
+                            fashion landing page
+                        </p>
+                    </div>
+                    <div class="gson2">
+                        <img src="../web images/mohammad-metri-E-0ON3VGrBc-unsplash.jpg" alt="shoes" class="shoes">
+                        <p class="shoesp">
+                            i havent used any
+                            javascript yet so
+                            it isnt fully responsive
+                        </p>
+                    </div>
+                </div>
+                <div class="leftson2">
+                    <div class="gson3">
+                        <img src="../web images/bags-2282.JPG" alt="bags" class="bags">
+                        <p class="bagsp">
+                            i got these images from<br />
+                            <a href="https://unsplash.com" target="_blank" class="unsplash"
+                                style="text-decoration: none;">
+                                unsplash
+                            </a>
+                        </p>
+                    </div>
+                    <div class="gson4">
+                        <img src="../web images/tamara-bellis-LJqRUWr9V0w-unsplash.jpg" alt="sunglasses"
+                            class="glasses">
+                        <p class="glassp">
+                            **********
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="rightdiv">
+                <p class="rightson1">
+                    welcome!
+                </p>
+                <p class="rightson2">
+                    check my github profile
+                    to see more projects im working on!
+                </p>
+                <div class="ggson1">
+                    <p class="rightson3">
+                        hover on this
+                    </p>
+                    <p class="rightson4">
+                        everything displayed here is a result
+                        from ideas that came off the top of my
+                        head. i might change certain things as
+                        more ideas come
+                    </p>
+                    <p class="rightson5">
+                        tap on the images below
+                        for extra info
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- bottom -->
+    <footer style="background-color: black;">
+        <ul style="list-style: none;">
+            <li>
+                <a href="https://www.github.com/adnaan-id" style=" color:#FFF;">
+                    GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.twitter.com/M19ntprop" style="color:#FFF;">
+                    Twitter
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+
+</html>
